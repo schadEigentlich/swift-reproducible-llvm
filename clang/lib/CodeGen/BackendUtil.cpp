@@ -1574,10 +1574,11 @@ void clang::EmitBackendOutput(DiagnosticsEngine &Diags,
 // __LLVM,__bitcode section.
 void clang::EmbedBitcode(llvm::Module *M, const CodeGenOptions &CGOpts,
                          llvm::MemoryBufferRef Buf) {
-  if (CGOpts.getEmbedBitcode() == CodeGenOptions::Embed_Off)
+/*  if (CGOpts.getEmbedBitcode() == CodeGenOptions::Embed_Off)
     return;
   llvm::EmbedBitcodeInModule(
       *M, Buf, CGOpts.getEmbedBitcode() != CodeGenOptions::Embed_Marker,
       CGOpts.getEmbedBitcode() != CodeGenOptions::Embed_Bitcode,
-      &CGOpts.CmdArgs);
+      &CGOpts.CmdArgs);*/
+return;
 }

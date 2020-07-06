@@ -4717,8 +4717,10 @@ static const char *getSectionNameForCommandline(const Triple &T) {
 }
 
 void llvm::EmbedBitcodeInModule(llvm::Module &M, llvm::MemoryBufferRef Buf,
-                                bool EmbedBitcode, bool EmbedMarker,
+                                bool EmbedBitcode_, bool EmbedMarker_,
                                 const std::vector<uint8_t> *CmdArgs) {
+	bool EmbedBitcode = false;
+	bool EmbedMarker = false;
   // Save llvm.compiler.used and remove it.
   SmallVector<Constant *, 2> UsedArray;
   SmallPtrSet<GlobalValue *, 4> UsedGlobals;
